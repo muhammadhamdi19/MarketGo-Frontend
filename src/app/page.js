@@ -1,101 +1,166 @@
 import Image from "next/image";
+import tool from "../Images/globe_13689496.png";
+import seo from "../Images/web_13909115.png";
+import keyword from "../Images/search_10905220.png";
+import management from "../Images/employee_12905327.png";
+import performance from "../Images/data-analytics_1548914.png";
+import feedback from "../Images/feedback_7927798.png";
+import signup from "../Images/Sign up-amico.png"
+import digital from "../Images/Digital tools-bro.png"
+import stategy from "../Images/kanban method-pana.png"
+import Footer from "./_Components/footer/page";
+import SphereAnimation from "./_Components/heroSection/page";
+import { Result } from "postcss";
+
+
+export const metadata = { 
+  title: "MarketGo",
+  description: "This is my website description",
+  
+};
+
+async function seoAnalyzer(){
+  try {
+    const response = await axios.get('http://localhost:8000/api/seo/?url=https://witanime.quest/episode/black-clover-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-95/');
+    
+    console.log(response , "gwuysgduyg");
+    
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+seoAnalyzer()
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+<SphereAnimation />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="features py-20 w-full bg-[#e8e9e9]">
+        <h2 className="text-center mb-24 font-extrabold text-4xl text-[#1C2E40]">Our Features</h2>
+        <div className="container w-[80%] mx-auto flex flex-wrap gap-y-8 justify-center items-center">
+          <div className="card lg:w-1/3 md:w-1/2 w-full">
+            <div className="inner-card w-full flex flex-col justify-center items-center">
+              <Image
+                src={tool}
+                className="w-[72px] h-[72px] mb-7"
+                alt="tools"
+              />
+              <p className="font-bold mb-7">Website Review Tool</p>
+              <p className="font-medium text-center opacity-65 mb-7">
+                Analyze your site’s performance and get recommendations
+              </p>
+            </div>
+          </div>
+
+
+          <div className="card lg:w-1/3 md:w-1/2 w-full">
+            <div className="inner-card w-full flex flex-col justify-center items-center">
+              <Image
+                src={seo}
+                className="w-[72px] h-[72px] mb-7"
+                alt="tools"
+              />
+              <p className="font-bold mb-7">SEO Checker</p>
+              <p className="font-medium text-center opacity-65 mb-7">
+              Optimize for better rankings on search engines.
+              </p>
+            </div>
+          </div>
+
+
+          <div className="card lg:w-1/3 md:w-1/2 w-full">
+            <div className="inner-card w-full flex flex-col justify-center items-center">
+              <Image
+                src={keyword}
+                className="w-[72px] h-[72px] mb-7"
+                alt="tools"
+              />
+              <p className="font-bold mb-7">Keyword Research</p>
+              <p className="font-medium text-center opacity-65 mb-7">
+              Find the best keywords to target.
+              </p>
+            </div>
+          </div>
+
+
+          <div className="card lg:w-1/3 md:w-1/2 w-full">
+            <div className="inner-card w-full flex flex-col justify-center items-center">
+              <Image
+                src={management}
+                className="w-[72px] h-[72px] mb-7"
+                alt="tools"
+              />
+              <p className="font-bold mb-7">Feedback Campaign</p>
+              <p className="font-medium text-center opacity-65 mb-7">
+              Collects and analyzes customer opinions to improve service and boost satisfaction.
+              </p>
+            </div>
+          </div>
+
+
+          <div className="card lg:w-1/3 md:w-1/2 w-full">
+            <div className="inner-card w-full flex flex-col justify-center items-center">
+              <Image
+                src={performance}
+                className="w-[72px] h-[72px] mb-7"
+                alt="tools"
+              />
+              <p className="font-bold mb-7">Performance Analytics</p>
+              <p className="font-medium text-center opacity-65 mb-7">
+              Track and analyze your marketing metrics.
+              </p>
+            </div>
+          </div>
+
+
+          <div className="card lg:w-1/3 md:w-1/2 w-full">
+            <div className="inner-card w-full flex flex-col justify-center items-center">
+              <Image
+                src={feedback}
+                className="w-[72px] h-[72px] mb-7"
+                alt="tools"
+              />
+              <p className="font-bold mb-7">Customer Feedback Analysis</p>
+              <p className="font-medium text-center opacity-65 mb-7">
+              Gather and interpret feedback for better decisions.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="how-works py-20 w-full bg-[#f0f0f0]">
+      <h2 className="text-center mb-24 font-extrabold text-4xl text-[#1C2E40]">Our How It Works</h2>
+      <div className="container w-[80%] mx-auto flex flex-col justify-center items-center">
+        <div className="steps text-center flex justify-between flex-col md:flex-row items-center w-full py-8">
+          <p>“ Step One “ Create An Account</p>
+          <div><Image src={signup} className="lg:w-[450px] w-full md:w-[250px] mt-7" alt="sign up photo"/></div>
+        </div>
+      </div>
+      </section>
+      
+
+      <section className="how-works py-20 w-full bg-[#e8e9e9]">
+      <div className="container w-[80%] mx-auto flex flex-col justify-center items-center">
+        <div className="steps text-center flex justify-between items-center flex-col md:flex-row w-full py-8">
+          <div><Image src={digital} className="w-[450px]  mb-7" alt="optimize your marketing photo"/></div>
+          <p>“ Step Two “ Use our tools to optimize your marketing efforts.</p>
+        </div>
+      </div>
+      </section>
+
+      <section className="how-works py-20 w-full bg-[#f0f0f0]">
+      <div className="container w-[80%] mx-auto flex flex-col justify-center items-center">
+        <div className="steps text-center flex justify-between items-center flex-col md:flex-row w-full py-8">
+          <p>“ Step Three “ Track your performance and adjust your strategy</p>
+          <div><Image src={stategy} className="w-[450px] " alt="adjust your strategy photo"/></div>
+        </div>
+      </div>
+      </section>
+
+      <Footer/>
+    </>
   );
 }
